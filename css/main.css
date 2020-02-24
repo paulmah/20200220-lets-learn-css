@@ -1,12 +1,94 @@
-h1 {
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+
+@font-face {
+    font-family: 'JetBrains Mono'; /* add this font > needs to be downloaded */
+    src: url( '../fonts/jetbrains-mono/JetBrainsMono-Regular.ttf');
+    src: url( '../fonts/jetbrains-mono/JetBrainsMono-Regular.ttf') format('truetype' ); /* previous line is for backwards compatibility */
+    /* can use url but it may go away > example are adobe and google fonts */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face { /* may be needed depending on webpage > some browsers may guess based on regular */
+    font-family: 'JetBrains Mono'; /* add this font > needs to be downloaded */
+    src: url( '../fonts/jetbrains-mono/JetBrainsMono-Bold.ttf');
+    src: url( '../fonts/jetbrains-mono/JetBrainsMono-Bold.ttf') format('truetype' ); /* previous line is for backwards compatibility */
+    /* can use url but it may go away > example are adobe and google fonts */
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face { /* may be needed depending on webpage > some browsers may guess based on regular */
+    font-family: 'JetBrains Mono'; /* add this font > needs to be downloaded */
+    src: url( '../fonts/jetbrains-mono/JetBrainsMono-Bold-Italic.ttf');
+    src: url( '../fonts/jetbrains-mono/JetBrainsMono-Bold-Italic.ttf') format('truetype' ); /* previous line is for backwards compatibility */
+    /* can use url but it may go away > example are adobe and google fonts */
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'JetBrains Mono'; /* add this font > needs to be downloaded */
+    src: url( '../fonts/jetbrains-mono/JetBrainsMono-Regular.ttf');
+    src: /* you would want to have all the main formats in each @font-face! */
+    url( '../fonts/jetbrains-mono/JetBrainsMono-Regular.woff' ) format('woff' ), 
+    url( '../fonts/jetbrains-mono/JetBrainsMono-Regular.ttf' ) format('truetype' ), 
+    url( '../fonts/jetbrains-mono/JetBrainsMono-Regular.svg') format( 'svg' ); 
+    /* previous line is for backwards compatibility */
+    /* can use url but it may go away > example are adobe and google fonts */
+    font-weight: normal;
+    font-style: normal;
+}
+
+* { /* basic browser reset. */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+code {
+    white-space: pre;
+    font-family: 'JetBrains Mono', Consolas, monospace;
+}
+body {
+    /* background-image: url(https://cdn.pixabay.com/photo/2020/02/12/18/57/toronto-4843615_960_720.jpg); */
+    background-image: url('../img/dancer.gif');  ('../img/dancer.gif') */
+    background-size: tile; /*tile || cover || */
+    background-repeat: no-repeat;
+    background-position: top center; /* top right */
+    background-attachment: fixed;
+
+}
+
+
+
+h1, h2, h4, h5, h6 {
+    font-size: 46px;
     font-family: 'Times New Roman', Georgia, serif;
-    text-align: center
+    text-align: center;
+    padding-top: 60px;
+}
+
+h1 {
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    font-weight: bold;
+    text-align: center;
+    padding: 50px;
+}
+h2 {
+    font-family: 'Merriweather','Comic Sans', cursive;
+    font-size: 32px;
+    padding: 16px 0;
 }
 nav {
     width: auto;
     max-width: 500px;
     background-color: salmon;
-    margin: 16px auto;
+    margin: 0px auto;
+    position: relative;
+    top: 0px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    z-index: 1;
 }
 nav ul {
     text-align: center;
@@ -20,9 +102,13 @@ nav ul li a {
     display: inline-block;
     padding: 16px 32px; /* 16 for top and bottom and 32 for left right */
 }
-nav ul li a:hover {
+nav ul li a:hover, nav ul li a:focus {
     background-color: rgb( 0,255,0);
     color: #ff00ff /* fff implies ffffff */
+}
+nav ul li a:active {
+    background-color: rgb( 255,0,255);
+    color: #00ff00 /* fff implies ffffff */
 }
 
 article {
@@ -38,6 +124,23 @@ p {
     color: rgb( 33,33,33 ); /*f There are a few ways to do colour... */
     background-color: #eeeeee; /* short hand with #eee */
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">    
+}
+
+#float-practice {
+    float: left;
+    margin-top: 0;
+    margin-right: 16px;
+    margin-bottom: 0px;
+    margin-left: 0; /* margin: 0 16px 16px 0; */
+}
+#z-index-practice {
+    position: absolute;
+    display: block;
+    top: 30px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 0; /* visual layering! */
 }
 
 /* Text meant only for screen readers. */
@@ -60,7 +163,7 @@ p {
                                 a:active state of element
                                 */
 
-    background-color: #eee;
+    /* background-color: #eee;
     clip: auto !important;
     clip-path: none;
     color: #444;
@@ -99,3 +202,34 @@ p {
     height: 75px;
 
   }
+
+#background-bullets, 
+#images-bullets {
+    list-style: none;
+    margin: 16px auto;
+    padding: 16px;
+}
+#background-bullets li {
+    background-image: url( '../img/phoenix.jpg');
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: top left;
+    padding: 4px 8px 8px 40px
+
+}
+#images-bullets {
+    position: relative; /* position relative to li */
+    padding: 8px 8px 8px 264px;
+
+}
+/* only do this if the image is important to the content */
+#images-bullets li img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+
+
+}
+
