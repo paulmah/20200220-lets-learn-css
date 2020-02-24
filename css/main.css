@@ -61,7 +61,7 @@ body {
 
 
 h1, h2, h4, h5, h6 {
-    font-size: 46px;
+    font-size: 32px;
     font-family: 'Times New Roman', Georgia, serif;
     text-align: center;
     padding-top: 60px;
@@ -75,7 +75,7 @@ h1 {
 }
 h2 {
     font-family: 'Merriweather','Comic Sans', cursive;
-    font-size: 32px;
+    font-size: 26px;
     padding: 16px 0;
 }
 nav {
@@ -140,7 +140,7 @@ p {
     right: 0;
     left: 0;
     margin: auto;
-    z-index: 0; /* visual layering! */
+    z-index: -1; /* visual layering! */
 }
 
 /* Text meant only for screen readers. */
@@ -229,7 +229,54 @@ p {
     left: 0;
     width: 32px;
     height: 32px;
-
-
+}
+#social-media-links {
+    list-style: none;
+    test-align: center;
+}
+#social-media-links > li {  /* using '>', only direct child affected (not grandchild). the li must be directly inside the element with the "social-media-links" id in this case */
+    display: inline-block;
+    margin: 8px;
+}
+#social-media-links .fab {
+    color: rgba( 50, 50, 50, 1);
+    font-size: 32px;
+}
+#social-media-links a:hover .fab,
+#social-media-links a:focus .fab,
+#social-media-links a:active .fab  /* psuedo-selector with nesting. */
+{
+    color: rgba( 255, 0, 0, 0.75 ); /* rgba - the "a" stands for alpha channel.   alpha channel: 1 = opaque; 0 = transparent.  can use values in between like 0.5 */
+    /* color: rgba( 50, 50, 50, 0.5 ); /* rgba - the "a" stands for alpha channel.   alpha channel: 1 = opaque; 0 = transparent.  can use values in between like 0.5 */
 }
 
+@media screen and ( min-width: 500px ) {
+    body {
+        background: red;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 30px
+    }
+    h3 {
+        font-size: 26px
+    }
+
+}@media screen and ( min-width: 1024px ) {
+    body {
+        background: green;
+    }
+    h1 {
+        font-size: 64px;
+    }
+    h2 {
+        font-size: 32px
+    }
+    h3 {
+        font-size: 28px
+    }
+
+}
