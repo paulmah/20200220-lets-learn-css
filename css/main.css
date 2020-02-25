@@ -50,7 +50,7 @@ code {
 }
 body {
     /* background-image: url(https://cdn.pixabay.com/photo/2020/02/12/18/57/toronto-4843615_960_720.jpg); */
-    background-image: url('../img/dancer.gif');  ('../img/dancer.gif') */
+    background-image: url('../img/dancer1.gif');  ('../img/dancer.gif') */
     background-size: tile; /*tile || cover || */
     background-repeat: no-repeat;
     background-position: top center; /* top right */
@@ -230,9 +230,53 @@ p {
     width: 32px;
     height: 32px;
 }
+
+
+/* 20200225 - gradient and speech bubble */
+/* ------------------------------------------------------------*/
+.gradient-bg {
+    height: 300px;
+    opacity: 0.75;
+    margin-top: 50px;
+    background: rgb(195,67,52);
+    background: linear-gradient(142deg, rgba(195,67,52,1) 0%, rgba(204,214,43,1) 21%, rgba(38,121,9,1) 35%, rgba(30,22,160,1) 63%, rgba(0,212,255,1) 100%);
+/* 20200225 - from cssgradient.io */
+    box-shadow: 32px 32px 0px 0px rgba(0,0,0,1);
+}
+.speech-bubble {
+    background: rgba( 255, 255, 255, 0.95);
+    border-radius: 1.5em;
+    border-bottom-right-radius: 0;
+    max-width: 300px;
+    padding: 1.5em;
+    color: rgba( 33, 33, 33, 1 );
+    margin-top: 75px;
+    position: relative;
+}
+.speech-bubble::after {
+    /* double colon is a pseudo element. this is a fake element...  keep in mind its content cannot be read by screen readers or search engines --> only use it for purely visual text with no importance/meaning. */
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    box-sizing: content-box;
+    border-top: 0 solid transparent;
+    border-right: 32px solid rgba( 255, 255, 255, 0.95);
+    border-bottom: 32px solid transparent;
+    border-left: 0 solid transparent;
+    /* relative parent and triangle absolute to bottom right of previous block > 100% down and right: 0. */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    /* end triangle */
+    /* position it at the bottom right corner: */
+}
+/* ------------------------------------------------------------*/
+
+
 #social-media-links {
     list-style: none;
-    test-align: center;
+    text-align: center;
 }
 #social-media-links > li {  /* using '>', only direct child affected (not grandchild). the li must be directly inside the element with the "social-media-links" id in this case */
     display: inline-block;
@@ -250,7 +294,8 @@ p {
     /* color: rgba( 50, 50, 50, 0.5 ); /* rgba - the "a" stands for alpha channel.   alpha channel: 1 = opaque; 0 = transparent.  can use values in between like 0.5 */
 }
 
-@media screen and ( min-width: 500px ) {
+/* 20200224 for different size screens */
+/* @media screen and ( min-width: 500px ) {
     body {
         background: red;
     }
@@ -277,6 +322,6 @@ p {
     }
     h3 {
         font-size: 28px
-    }
+    } */
 
 }
