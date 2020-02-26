@@ -88,7 +88,7 @@ nav {
     right: 0;
     bottom: auto;
     left: 0;
-    z-index: 1;
+    z-index: 4;
 }
 nav ul {
     text-align: center;
@@ -272,6 +272,106 @@ p {
     /* position it at the bottom right corner: */
 }
 /* ------------------------------------------------------------*/
+/* 20200224 for different size screens */
+.video-section {
+    position: relative;
+    overflow: hidden;
+
+
+}
+
+
+/* ------------------------------------------------------------*/
+/* 20200226 for different size screens */
+
+
+
+.video-section > * {
+    position: relative;
+    z-index: 3;
+}
+.video-section p {
+    background: none;
+}
+
+
+.video-section video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 150%;
+    height: auto;
+    z-index: 1;
+ /*   opacity: 0.5; */
+}
+
+/* whiteout overlay */
+.video-section::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba( 255, 255, 255, 0.60 );
+    z-index: 2;
+
+}
+
+.transition-transform button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    color: gray;
+    background: lavenderblush;
+    padding: 8px 16px;
+    border: 3px solid black;
+    margin: 32px;
+    cursor: pointer; /* can be crosshair || none || not-allowed || URL ... */
+    transition: 
+        1s linear border, 
+        0.3s ease-in padding,
+        0.5s ease-in-out background-color,
+        2s ease color,
+        4s ease font-size;
+}
+
+.transition-transform button:hover,
+.transition-transform button:focus,
+.transition-transform button:active, {
+    color: lavenderblush;
+    font-size: 16px;
+    background-color: gray;
+    padding: 12px 20px;
+    border: 6px dotted indigo;
+}
+
+/* transform / hover example: */
+.transition-transform div {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: chartreuse;
+    cursor: pointer;
+    transition: 7s ease-out transform;
+}
+
+.transition-transform div + div {  /* +div = immediately after sibling = find a div beside a div... this is a "directly-followed-by" sibling selector. */
+    background-color: green;
+    pointer-events: none; /* disable hover/click/etc for the element. */
+    /* WARNING: will affect your javascript and all mouse actions!. */
+}
+
+.transition-transform div:hover + div {  /* +div = immediately after sibling */
+    transform: 
+        translate( 100px, -50px )
+        rotate( 180deg )
+        scale( 3.25 );
+
+}
 
 
 #social-media-links {
@@ -293,7 +393,7 @@ p {
     color: rgba( 255, 0, 0, 0.75 ); /* rgba - the "a" stands for alpha channel.   alpha channel: 1 = opaque; 0 = transparent.  can use values in between like 0.5 */
     /* color: rgba( 50, 50, 50, 0.5 ); /* rgba - the "a" stands for alpha channel.   alpha channel: 1 = opaque; 0 = transparent.  can use values in between like 0.5 */
 }
-
+/* ------------------------------------------------------------*/
 /* 20200224 for different size screens */
 /* @media screen and ( min-width: 500px ) {
     body {
@@ -323,5 +423,16 @@ p {
     h3 {
         font-size: 28px
     } */
+/* ------------------------------------------------------------*/
+/* 20200224 for different size screens */
+
+
+
+
+
+
+
+
+
 
 }
