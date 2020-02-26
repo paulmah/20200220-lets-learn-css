@@ -43,16 +43,16 @@
 /* ------------------------------------------------------------*/
 @keyframes my-animation { /* pay attention to your name! you can use this to call the animation whenever/whenever you need! */
     0% { /* we get to define at which point in an animation changes occur! */
-        transform: scale{ 1 }; /* what should change at this point in the animation??? */
+        transform: scale( 1 ); /* what should change at this point in the animation??? */
     }
     50% {
-        transform: scale{ 1.2 };
+        transform: scale( 1.2 );
     }
     75% {
-        transform: scale{ 1.5 };
+        transform: scale( 1.5 );
     }
     100% {
-        transform: scale{ 1 };
+        transform: scale( 1 );
     }
 }
 
@@ -345,12 +345,13 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba( 255, 255, 255, 0.60 );
+    background: rgba( 255, 255, 255, 0.50 );
     z-index: 2;
 
 }
 
 .transition-transform button {
+    display: inline-block;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 26px;
     color: gray;
@@ -369,7 +370,7 @@ p {
 
 .transition-transform button:hover,
 .transition-transform button:focus,
-.transition-transform button:active, {
+.transition-transform button:active {
     color: lavenderblush;
     font-size: 16px;
     background-color: gray;
@@ -423,7 +424,7 @@ p {
     border-radius: 150px;
     /* let's animate! */
     animation-name: my-animation; /* call it by name! */
-    animation-duration: 2s;
+    animation-duration: 0.6s;
     animation-iteration-count: infinite; /* how many times should it happen */
     animation-direction: normal; /* can also be alternate or reverse! */
     animation-timing-function: linear;
