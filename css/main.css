@@ -37,6 +37,33 @@
     font-style: normal;
 }
 
+/* ------------------------------------------------------------*/
+/* 20200226 for different size screens */
+/* defining a keyframe animation... */
+/* ------------------------------------------------------------*/
+@keyframes my-animation { /* pay attention to your name! you can use this to call the animation whenever/whenever you need! */
+    0% { /* we get to define at which point in an animation changes occur! */
+        transform: scale{ 1 }; /* what should change at this point in the animation??? */
+    }
+    50% {
+        transform: scale{ 1.2 };
+    }
+    75% {
+        transform: scale{ 1.5 };
+    }
+    100% {
+        transform: scale{ 1 };
+    }
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------*/
+/* ------------------------------------------------------------*/
+
 * { /* basic browser reset. */
     box-sizing: border-box;
     margin: 0;
@@ -283,7 +310,7 @@ p {
 
 /* ------------------------------------------------------------*/
 /* 20200226 for different size screens */
-
+/* ------------------------------------------------------------*/
 
 
 .video-section > * {
@@ -350,6 +377,20 @@ p {
     border: 6px dotted indigo;
 }
 
+.transition-transform button:nth-child(2) {
+    /* possible parameters: odd, even, every 2nd, might be able to chain ie nth-child(even):nth-child(even) 
+    use css tricks for nth child 
+    we can select specific children!  this can save us from ID- or CLASS-itus! use only ids and classes where you need. 
+    
+    *** need more on nth-child pseudo-selectors? check out: 
+    https://css-tricks.com/usefule-nth-shild-recipes */
+    background-color: black;
+}
+.transition-transform button:nth-child(3) {
+    /* possible parameters: odd, even, every 2nd, might be able to chain ie nth-child(even):nth-child(even) */
+    background-color: darkgoldenrod;
+}
+
 /* transform / hover example: */
 .transition-transform div {
     display: inline-block;
@@ -372,6 +413,25 @@ p {
         scale( 3.25 );
 
 }
+
+/* keyframe testing! */
+#keyframe-test {
+    width: 150px;
+    height: 150px;
+    background-color: firebrick;
+    margin: 64px;
+    border-radius: 150px;
+    /* let's animate! */
+    animation-name: my-animation; /* call it by name! */
+    animation-duration: 2s;
+    animation-iteration-count: infinite; /* how many times should it happen */
+    animation-direction: normal; /* can also be alternate or reverse! */
+    animation-timing-function: linear;
+}
+
+
+/* ------------------------------------------------------------*/
+/* ------------------------------------------------------------*/
 
 
 #social-media-links {
